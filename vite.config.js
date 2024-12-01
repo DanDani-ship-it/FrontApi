@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base:'https://DanDani-ship-it.github.io/FrontApi/',
   server: {
   proxy: {
     '/api': {
