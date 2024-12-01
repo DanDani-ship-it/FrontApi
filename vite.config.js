@@ -11,15 +11,7 @@ export default defineConfig({
     vueDevTools(),
   ],
   base:'https://DanDani-ship-it.github.io/FrontApi/',
-  server: {
-  proxy: {
-    '/api': {
-      target: 'https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com',
-      changeOrigin: true,
-      rewrite: (path) => path.replace(/^\/api/, ''),
-    },
-  },
-  },
+  server: {},
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
