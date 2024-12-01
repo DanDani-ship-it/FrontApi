@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
   proxy: {
     '/api': {
-      target: 'https://pro-api.coinmarketcap.com',
+      target: 'https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com',
       changeOrigin: true,
       rewrite: (path) => path.replace(/^\/api/, ''),
     },
