@@ -2,8 +2,7 @@
 import axios from 'axios'
 import TablaCrypto from './components/TablaCrypto.vue';
 import Navbar from './components/Navbar.vue';
-import DataTable from 'datatables.net-vue3';
-import DataTablesCore from 'datatables.net-bs5';
+
 export default {
   name: 'App',
   components: {
@@ -17,18 +16,24 @@ export default {
   },
   mounted() {
     axios
-      .get('/api/v1/cryptocurrency/listings/latest', {
-        headers: {
-          'X-CMC_PRO_API_KEY': '1276dec7-5445-4bc4-9029-a052f3c160ee', 
-        },
-        params: {
-          limit: 100,
-          sort: 'market_cap', 
-        },
-      })
-      .then((response) => {
-        this.info = response.data; 
-      })
+  .get('/api/v1/cryptocurrency/listings/latest', {
+    headers: {
+      'X-CMC_PRO_API_KEY': '1276dec7-5445-4bc4-9029-a052f3c160ee',
+      'X-Requested-With': 'XMLHttpRequest',  // Agregar este encabezado
+      'Origin': 'https://DanDani-ship-it.github.io',  // Agregar este encabezado si es necesario
+    },
+    params: {
+      limit: 100,
+      sort: 'market_cap',
+    },
+  })
+  .then((response) => {
+    this.info = response.data;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
   },
 };
 
