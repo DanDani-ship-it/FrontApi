@@ -19,8 +19,8 @@ export default {
   .get('/api/v1/cryptocurrency/listings/latest', {
     headers: {
       'X-CMC_PRO_API_KEY': '1276dec7-5445-4bc4-9029-a052f3c160ee',
-      'X-Requested-With': 'XMLHttpRequest',  // Agregar este encabezado
-      'Origin': 'https://DanDani-ship-it.github.io',  // Agregar este encabezado si es necesario
+      'X-Requested-With': 'XMLHttpRequest',  
+      
     },
     params: {
       limit: 100,
