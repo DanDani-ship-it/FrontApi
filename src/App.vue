@@ -18,8 +18,7 @@ export default {
     axios
   .get('https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
     headers: {
-      'X-CMC_PRO_API_KEY': '1276dec7-5445-4bc4-9029-a052f3c160ee', 
-
+      'X-CMC_PRO_API_KEY': '1276dec7-5445-4bc4-9029-a052f3c160ee',    
     },
     params: {
       limit: 100,

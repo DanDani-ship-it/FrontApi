@@ -47,7 +47,7 @@ export default {
       },
       columnDefs: [
         { headerName: '#', valueGetter: 'node.rowIndex + 1', sortable: true },
-        { headerName: 'Nombre', field: 'symbol', sortable: true },
+        { headerName: 'Nombre', valueGetter: (params) => `${params.data.symbol} - ${params.data.name}`, sortable: true },
         { headerName: 'Precio', field: 'quote.USD.price', sortable: true },
         { headerName: 'Capitalización', field: 'quote.USD.market_cap', sortable: true },
         { headerName: 'Suministro Máximo', field: 'max_supply', sortable: true },
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     refreshTable() {
-      this.$forceUpdate();  // Refresca el componente
+      this.$forceUpdate();  
     },
   },
 };
